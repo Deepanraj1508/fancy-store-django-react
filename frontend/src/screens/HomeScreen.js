@@ -23,21 +23,13 @@ function HomeScreen({ history }) {
 
   return (
     <div>
-      
-
-      <section className="landing">
-        <Container>
-          <h1>Welcome to Our Store</h1>
-          <p>
-            Discover a wide range of products curated to meet your needs. From
-            gifts to jewelry and stationery, we have it all!
-          </p>
-          <Button href="#products" variant="primary">
-            Explore Products
-          </Button>
-        </Container>
-      </section>
-      {/* {!keyword && <ProductCarousel />} */}
+<header class="masthead">
+  <div class="container">
+    <div class="masthead-subheading">Welcome To Our Studio!</div>
+    <div class="masthead-heading text-uppercase">It's Nice To Meet You</div>
+    <a class="btn btn-primary btn-xl text-uppercase" href="">Tell Me More</a>
+  </div>
+</header>
       <section id="about" className="about">
         <Container>
           <h2>About Us</h2>
