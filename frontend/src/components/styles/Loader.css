@@ -1,0 +1,43 @@
+
+.loader-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    /* background-color: rgba(255, 255, 255, 0.8); */
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 9999;
+  }
+  
+  .custom-spinner {
+    width: 80px;
+    height: 80px;
+    border-width: 10px; 
+    border-top-color: #007bff; 
+    animation: spinner-animation 1.5s infinite linear;
+  }
+  
+  /* Keyframes for smoother spinner rotation */
+  @keyframes spinner-animation {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  
+  /* Optional: Text for loading message, positioned at bottom */
+  .visually-hidden {
+    color: transparent;
+  }
+  
+  /* Optional - You can make the background color darker if needed */
+  .loader-container {
+    background-color: rgba(0, 0, 0, 0.4); /* Semi-transparent black overlay */
+  }
+  

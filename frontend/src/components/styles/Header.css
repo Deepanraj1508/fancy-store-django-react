@@ -1,0 +1,55 @@
+.custom-navbar {
+  background: linear-gradient(90deg, #1a73e8, #0069d9);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 0.75rem 1.5rem;
+}
+
+.brand {
+  font-family: "Poppins", sans-serif;
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+
+.header-logo {
+  width: 40px;
+  height: auto;
+}
+
+.nav-item {
+  font-family: "Roboto", sans-serif;
+  font-size: 1.1rem;
+  margin: 0 1rem;
+  color: #fff !important;
+}
+
+.nav-item:hover {
+  color: #ffc107 !important;
+  text-decoration: underline;
+}
+
+.nav-dropdown .dropdown-item {
+  color: #333;
+}
+
+.nav-dropdown .dropdown-item:hover {
+  background-color: #f8f9fa;
+}
+
+.cart-badge {
+  font-size: 0.8rem;
+  font-weight: bold;
+  padding: 0.3rem 0.5rem;
+}
+
+.navbar-brand span {
+  color: #fff;
+  font-size: 1.25rem;
+}
+
+.navbar-toggler {
+  border: none;
+}
+
+.navbar-toggler-icon {
+  color: #fff;
+}

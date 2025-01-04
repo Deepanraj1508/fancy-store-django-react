@@ -1,0 +1,52 @@
+/* Overall Carousel Styles */
+.product-carousel {
+  max-width: 100%;
+  background-color: #333;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.product-carousel .carousel-item {
+  transition: transform 0.5s ease-in-out;
+}
+
+.product-carousel .carousel-image {
+  object-fit: cover;
+  height: 400px; /* Adjust height */
+  transition: transform 0.5s ease;
+}
+
+.product-carousel .carousel-item:hover .carousel-image {
+  transform: scale(1.05);
+}
+
+/* Link styles */
+.product-link {
+  text-decoration: none;
+}
+
+/* Carousel Caption */
+.carousel-caption {
+  background: rgba(0, 0, 0, 0.6);
+  padding: 15px;
+  border-radius: 5px;
+  bottom: 10%;
+}
+
+.product-name {
+  font-size: 1.2rem;
+  color: #fff;
+  font-weight: bold;
+}
+
+/* Styling for smaller screen sizes */
+@media (max-width: 768px) {
+  .product-carousel .carousel-image {
+    height: 300px; /* Adjust height for smaller screens */
+  }
+
+  .carousel-caption h4 {
+    font-size: 1rem;
+  }
+}

@@ -1,0 +1,113 @@
+/* ProfileScreen.css */
+
+/* General Styling */
+.container {
+    margin-top: 20px;
+  }
+  
+  /* Profile Form */
+  .profile-form {
+    background-color: #f8f9fa;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .profile-form .form-group {
+    margin-bottom: 15px;
+  }
+  
+  .profile-form label {
+    font-weight: 600;
+    font-size: 1.1rem;
+  }
+  
+  .profile-form .form-control {
+    font-size: 1rem;
+    padding: 10px;
+    border-radius: 4px;
+    box-shadow: none;
+    border: 1px solid #ced4da;
+  }
+  
+  .profile-form .form-control:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+  }
+  
+  .profile-form button {
+    font-size: 1.1rem;
+    font-weight: bold;
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: none;
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .profile-form button:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Order Table */
+  .table-sm th,
+  .table-sm td {
+    vertical-align: middle;
+  }
+  
+  .table-sm th {
+    background-color: #f1f1f1;
+    font-weight: bold;
+    color: #333;
+  }
+  
+  .table-sm td {
+    color: #555;
+  }
+  
+  .table-sm .btn-sm {
+    font-size: 0.9rem;
+    padding: 5px 10px;
+    border-radius: 5px;
+  }
+  
+  .table-sm .btn-sm:hover {
+    background-color: #0056b3;
+    color: white;
+  }
+  
+  /* Message and Loader */
+  .message {
+    margin-bottom: 20px;
+  }
+  
+  .loader {
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  .spinner-border {
+    width: 3rem;
+    height: 3rem;
+  }
+  
+  @media (max-width: 768px) {
+    .profile-form {
+      padding: 15px;
+    }
+  
+    .profile-form label {
+      font-size: 1rem;
+    }
+  
+    .profile-form button {
+      font-size: 1rem;
+    }
+  
+    .table-sm {
+      font-size: 0.9rem;
+    }
+  }
+  

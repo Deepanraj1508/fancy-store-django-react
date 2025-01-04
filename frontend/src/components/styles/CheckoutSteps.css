@@ -1,0 +1,38 @@
+.checkout-steps {
+    border-bottom: 2px solid #ddd;
+    padding-bottom: 10px;
+  }
+  
+  .checkout-steps .nav-link {
+    font-size: 1rem;
+    font-weight: bold;
+    padding: 10px 15px;
+    transition: all 0.3s ease;
+  }
+  
+  .checkout-steps .active-step {
+    color: #28a745;
+    border-bottom: 3px solid #28a745;
+  }
+  
+  .checkout-steps .disabled-step {
+    color: #999;
+    cursor: not-allowed;
+  }
+  
+  .checkout-steps .nav-link:hover {
+    text-decoration: none;
+    transform: translateY(-2px);
+  }
+  
+  .checkout-steps .active-step:hover {
+    color: #218838;
+  }
+  
+  @media (max-width: 768px) {
+    .checkout-steps .nav-link {
+      font-size: 0.9rem;
+      padding: 8px 12px;
+    }
+  }
+  

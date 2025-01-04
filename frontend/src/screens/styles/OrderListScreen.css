@@ -1,0 +1,63 @@
+/* Order List Screen Styles */
+.order-list-screen {
+    padding: 20px;
+  }
+  
+  .order-list-screen h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #333;
+  }
+  
+  .order-list-screen .table {
+    margin-top: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .order-list-screen .table th,
+  .order-list-screen .table td {
+    text-align: center;
+    vertical-align: middle;
+  }
+  
+  .order-list-screen .table th {
+    background-color: #f8f9fa;
+    color: #343a40;
+    font-weight: bold;
+  }
+  
+  .order-list-screen .table-striped tbody tr:nth-of-type(odd) {
+    background-color: #f2f2f2;
+  }
+  
+  .order-list-screen .btn-sm {
+    padding: 6px 12px;
+    font-size: 0.875rem;
+    border-radius: 5px;
+    background-color: #343a40;
+    color: white;
+  }
+  
+  .order-list-screen .btn-sm:hover {
+    background-color: #495057;
+  }
+  
+  /* Icons in the table (for paid and delivered statuses) */
+  .order-list-screen i {
+    font-size: 1.25rem;
+  }
+  
+  /* Loader and Message Style */
+  .order-list-screen .loader {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+  }
+  
+  .order-list-screen .message {
+    margin-top: 20px;
+    font-size: 1.2rem;
+  }
+  

@@ -1,0 +1,30 @@
+/* CartScreen.css */
+.cart-item-quantity {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .cart-item-quantity button {
+    padding: 5px 10px;
+    font-size: 18px;
+    width: 30px;
+    height: 30px;
+  }
+  
+  .quantity-display {
+    font-size: 18px;
+    margin: 0 10px;
+    width: 30px;
+    text-align: center;
+  }
+  
+  .cart-item-quantity button:disabled {
+    opacity: 0.5;
+  }
+  
+  .cart-item-quantity span {
+    font-size: 16px;
+    font-weight: bold;
+  }
+  

@@ -1,0 +1,49 @@
+/* Message.css */
+
+/* Custom Styling for the Alert */
+.custom-alert {
+    font-size: 1.1rem; /* Slightly larger text for readability */
+    border-radius: 8px; /* Rounded corners */
+    padding: 15px 20px; /* Padding for better spacing */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Light shadow effect */
+    transition: transform 0.3s ease-in-out; /* Smooth transition for interaction */
+  }
+  
+  /* Hover effect for Alert */
+  .custom-alert:hover {
+    transform: scale(1.05); /* Slight scale effect on hover */
+  }
+  
+  /* Custom colors for each variant */
+  .custom-alert-success {
+    background-color: #28a745;
+    color: white;
+    border-color: #28a745;
+  }
+  
+  .custom-alert-danger {
+    background-color: #dc3545;
+    color: white;
+    border-color: #dc3545;
+  }
+  
+  .custom-alert-warning {
+    background-color: #ffc107;
+    color: black;
+    border-color: #ffc107;
+  }
+  
+  .custom-alert-info {
+    background-color: #17a2b8;
+    color: white;
+    border-color: #17a2b8;
+  }
+  
+  /* Media Queries for mobile responsiveness */
+  @media (max-width: 768px) {
+    .custom-alert {
+      font-size: 1rem; /* Smaller text on mobile */
+      padding: 12px 15px; /* Less padding on mobile */
+    }
+  }
+  
