@@ -1,33 +1,15 @@
 import React, { useState, useEffect } from "react";
-
-/* AXIOS */
 import axios from "axios";
-
-/* REACT ROUTER */
 import { Link } from "react-router-dom";
-
-/* REACT BOOTSTRAP */
-import { Button, Form } from "react-bootstrap";
-
-/* COMPONENTS */
+import { useDispatch, useSelector } from "react-redux";
+import { listProductDetails, updateProduct } from "../actions/productActions";
+import { PRODUCT_UPDATE_RESET } from "../constants/productConstants";
 import Message from "../components/Message";
 import Loader from "../components/Loader";
-import FormContainer from "../components/FormContainer";
-
-/* REACT - REDUX */
-import { useDispatch, useSelector } from "react-redux";
-
-/* ACTION CREATORS */
-import { listProductDetails, updateProduct } from "../actions/productActions";
-
-/* ACTION TYPES */
-import { PRODUCT_UPDATE_RESET } from "../constants/productConstants";
+import "./styles/ProductEditScreen.css"; // Import CSS for styling
 
 function ProductEditScreen({ match, history }) {
-  /* GETTING USER ID FROM URL */
   const productId = match.params.id;
-
-  /* STATE */
   const [name, setName] = useState("");
   const [price, setPrice] = useState(0);
   const [image, setImage] = useState("");
@@ -39,7 +21,6 @@ function ProductEditScreen({ match, history }) {
 
   const dispatch = useDispatch();
 
-  /* PULLING A PART OF STATE FROM THE ACTUAL STATE IN THE REDUX STORE */
   const productDetails = useSelector((state) => state.productDetails);
   const { product, loading, error } = productDetails;
 
@@ -51,7 +32,6 @@ function ProductEditScreen({ match, history }) {
   } = productUpdate;
 
   useEffect(() => {
-    // CHECK IF PRODUCT WAS UDPATED
     if (successUpdate) {
       dispatch({ type: PRODUCT_UPDATE_RESET });
       history.push("/admin/productlist");
@@ -70,12 +50,8 @@ function ProductEditScreen({ match, history }) {
     }
   }, [dispatch, product, productId, history, successUpdate]);
 
-  /* HANDLERS */
-
   const submitHandler = (e) => {
     e.preventDefault();
-
-    // DISPATCH TO UDPATE PRODUCT
     dispatch(
       updateProduct({
         _id: productId,
@@ -93,10 +69,8 @@ function ProductEditScreen({ match, history }) {
   const uploadFileHandler = async (e) => {
     const file = e.target.files[0];
     const formData = new FormData();
-
     formData.append("image", file);
     formData.append("product_id", productId);
-
     setUploading(true);
 
     try {
@@ -105,13 +79,11 @@ function ProductEditScreen({ match, history }) {
           "Content-Type": "multipart/form-data",
         },
       };
-
       const { data } = await axios.post(
         "/api/products/upload/",
         formData,
         config
       );
-
       setImage(data);
       setUploading(false);
     } catch (error) {
@@ -120,106 +92,84 @@ function ProductEditScreen({ match, history }) {
   };
 
   return (
-    <div>
-      <Link to="/admin/productlist">Go Back</Link>
+    <div className="product-edit-screen">
+      <Link to="/admin/productlist" className="back-button">
+        Go Back
+      </Link>
 
-      <FormContainer>
+      <div className="form-container">
         <h1>Edit Product</h1>
-
         {loadingUpdate && <Loader />}
         {errorUpdate && <Message variant="danger">{errorUpdate}</Message>}
-
         {loading ? (
           <Loader />
         ) : error ? (
           <Message variant="danger">{error}</Message>
         ) : (
-          <Form onSubmit={submitHandler}>
-            <Form.Group controlId="name">
-              <Form.Label>Name</Form.Label>
-              <Form.Control
-                type="name"
-                placeholder="Enter Name"
-                value={name}
-                onChange={(e) => setName(e.target.value)}
-              />
-            </Form.Group>
+          <form onSubmit={submitHandler} className="edit-form">
+            <label>Name</label>
+            <input
+              type="text"
+              placeholder="Enter Name"
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+            />
 
-            <Form.Group controlId="price">
-              <Form.Label>Price</Form.Label>
-              <Form.Control
-                type="number"
-                placeholder="Enter Price"
-                value={price}
-                onChange={(e) => setPrice(e.target.value)}
-              />
-            </Form.Group>
+            <label>Price</label>
+            <input
+              type="number"
+              placeholder="Enter Price"
+              value={price}
+              onChange={(e) => setPrice(e.target.value)}
+            />
 
-            <Form.Group controlId="image">
-              <Form.Label>Image</Form.Label>
-              <Form.Control
-                type="text"
-                placeholder="Enter Image"
-                value={image}
-                onChange={(e) => setImage(e.target.value)}
-              />
+            <label>Image</label>
+            <input
+              type="text"
+              placeholder="Enter Image"
+              value={image}
+              onChange={(e) => setImage(e.target.value)}
+            />
+            <input type="file" onChange={uploadFileHandler} />
+            {uploading && <Loader />}
 
-              <Form.File
-                id="image-file"
-                label="Choose File"
-                custom
-                onChange={uploadFileHandler}
-              />
+            <label>Brand</label>
+            <input
+              type="text"
+              placeholder="Enter Brand"
+              value={brand}
+              onChange={(e) => setBrand(e.target.value)}
+            />
 
-              {uploading && <Loader />}
-            </Form.Group>
+            <label>Stock</label>
+            <input
+              type="number"
+              placeholder="Enter Stock"
+              value={countInStock}
+              onChange={(e) => setCountInStock(e.target.value)}
+            />
 
-            <Form.Group controlId="brand">
-              <Form.Label>Brand</Form.Label>
-              <Form.Control
-                type="text"
-                placeholder="Enter Brand"
-                value={brand}
-                onChange={(e) => setBrand(e.target.value)}
-              />
-            </Form.Group>
+            <label>Category</label>
+            <input
+              type="text"
+              placeholder="Enter Category"
+              value={category}
+              onChange={(e) => setCategory(e.target.value)}
+            />
 
-            <Form.Group controlId="countinstock">
-              <Form.Label>Stock</Form.Label>
-              <Form.Control
-                type="number"
-                placeholder="Enter Stock"
-                value={countInStock}
-                onChange={(e) => setCountInStock(e.target.value)}
-              />
-            </Form.Group>
+            <label>Description</label>
+            <textarea
+              placeholder="Enter Description"
+              value={description}
+              onChange={(e) => setDescription(e.target.value)}
+            />
 
-            <Form.Group controlId="category">
-              <Form.Label>Category</Form.Label>
-              <Form.Control
-                type="text"
-                placeholder="Enter Category"
-                value={category}
-                onChange={(e) => setCategory(e.target.value)}
-              />
-            </Form.Group>
-
-            <Form.Group controlId="description">
-              <Form.Label>Description</Form.Label>
-              <Form.Control
-                as="textarea"
-                placeholder="Enter Description"
-                value={description}
-                onChange={(e) => setDescription(e.target.value)}
-              />
-            </Form.Group>
-
-            <Button type="submit" variant="primary" className="mt-3">
+            <button type="submit" className="submit-button">
               Update
-            </Button>
-          </Form>
+            </button>
+          </form>
         )}
-      </FormContainer>
+      </div>
     </div>
   );
 }

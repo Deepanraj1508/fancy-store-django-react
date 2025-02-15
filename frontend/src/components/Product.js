@@ -1,36 +1,37 @@
 import React from "react";
-import { Card } from "react-bootstrap";
 import { Link } from "react-router-dom";
-import Rating from "./Rating";
-import "./styles/Product.css"; // Import custom styles
+import { FaShoppingCart, FaHeart } from "react-icons/fa"; // Import Icons
+import "./styles/Product.css"; // Custom CSS
 
 function Product({ product }) {
   return (
-    <Card className="product-card my-3 p-3 rounded shadow">
-      <Link to={`/product/${product._id}`} className="product-image-link">
-        <Card.Img className="product-image" src={product.image} alt={product.name} />
-      </Link>
-
-      <Card.Body>
-        <Link to={`/product/${product._id}`} className="product-title-link">
-          <Card.Title as="div">
-            <strong>{product.name}</strong>
-          </Card.Title>
+    <div className="product-card">
+      {/* Product Image Section */}
+      <div className="product-image-container">
+        <Link to={`/product/${product._id}`}>
+          <img className="product-image" src={product.image} alt={product.name} />
         </Link>
+        <div className="product-badge">HOT</div> {/* Badge for New/Hot Products */}
+      </div>
 
-        <Card.Text as="div">
-          <Rating
-            value={product.rating}
-            text={`${product.numReviews} reviews`}
-            color={"#f8e825"}
-          />
-        </Card.Text>
+      {/* Product Details */}
+      <div className="product-details">
+        <Link to={`/product/${product._id}`} className="product-title-link">
+          <h2 className="product-title">{product.name}</h2>
+        </Link>
+        {/* Price Section */}
+        <div className="product-price">
+          <span className="old-price">₹{product.oldPrice}</span>
+          <span className="new-price">₹{product.price}</span>
+        </div>
 
-        <Card.Text as="h3" className="product-price">
-          ₹{product.price}
-        </Card.Text>
-      </Card.Body>
-    </Card>
+        {/* Icons for Cart & Wishlist */}
+        <div className="product-icons">
+          <FaShoppingCart className="cart-icon" title="Add to Cart" />
+          <FaHeart className="wishlist-icon" title="Add to Wishlist" />
+        </div>
+      </div>
+    </div>
   );
 }
 

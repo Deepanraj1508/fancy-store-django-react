@@ -1,0 +1,64 @@
+.page-heading {
+    background-image: url('../Assets/about-us-page-heading.jpg');
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    text-align: center;
+    color: #fff;
+    padding: 50px 0;
+  }
+  
+  .page-heading .inner-content h2 {
+    font-size: 48px;
+    font-weight: 700;
+    margin-bottom: 10px;
+    color: #ffffff;
+  }
+  
+  .page-heading .inner-content span {
+    font-size: 18px;
+  }
+  
+  .about-us {
+    padding: 50px 0;
+  }
+  
+  .about-us .left-image img {
+    width: 100%;
+    border-radius: 8px;
+  }
+  
+  .about-us .right-content {
+    padding: 20px;
+  }
+  
+  .about-us .right-content h4 {
+    font-size: 32px;
+    margin-bottom: 20px;
+  }
+  
+  .about-us .right-content span {
+    display: block;
+    margin-bottom: 20px;
+    font-style: italic;
+    color: #666;
+  }
+  
+  .about-us .quote {
+    margin: 20px 0;
+    display: flex;
+    align-items: center;
+  }
+  
+  .about-us .quote i {
+    font-size: 24px;
+    margin-right: 10px;
+    color: #999;
+  }
+  
+  .about-us .quote p {
+    font-size: 18px;
+    font-style: italic;
+    color: #333;
+  }
+  

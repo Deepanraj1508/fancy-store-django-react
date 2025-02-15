@@ -6,6 +6,7 @@ import Header from "./components/Header";
 import Footer from "./components/Footer";
 import HomeScreen from "./screens/HomeScreen";
 import ProductScreen from "./screens/ProductScreen";
+import AllProductScreen from "./screens/AllProductScreen";
 import CartScreen from "./screens/CartScreen";
 import LoginScreen from "./screens/LoginScreen";
 import RegisterScreen from "./screens/RegisterScreen";
@@ -22,6 +23,7 @@ import OrderListScreen from "./screens/OrderListScreen";
 
 /* REACT ROUTER */
 import { HashRouter as Router, Route } from "react-router-dom";
+import About from "./components/About";
 
 function App() {
   return (
@@ -37,6 +39,8 @@ function App() {
 
           <Route path="/profile" component={ProfileScreen} />
 
+          <Route path="/about" component={About} />
+
           <Route path="/shipping" component={ShippingScreen} />
 
           <Route path="/payment" component={PaymentScreen} />
@@ -44,6 +48,8 @@ function App() {
           <Route path="/placeorder" component={PlaceOrderScreen} />
 
           <Route path="/order/:id" component={OrderScreen} />
+
+          <Route path="/products" component={AllProductScreen} />
 
           <Route path="/product/:id" component={ProductScreen} />
 
